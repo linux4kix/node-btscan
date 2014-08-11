@@ -1,0 +1,17 @@
+{
+  "name" : "node-btscan",
+  "version" : "0.0.2",
+  "description" : "A node.js Bluetooth Scanner.",
+  "author" : "Jon Nettleton <jon.nettleton@gmail.com>",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/linux4kix/node-btscan.git"
+  },
+  "engines": {
+    "node" : ">=0.8"
+  },
+  "main" : "./lib/btscan.js",
+  "scripts" : {
+    "install" : "node-gyp configure build"
+  }
+}
