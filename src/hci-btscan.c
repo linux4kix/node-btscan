@@ -62,7 +62,6 @@ int start_periodic_inq(int dd)
 
 int main(int argc, const char* argv[])
 {
-  char *hciDeviceIdOverride = NULL;
   int hciDeviceId = 0;
   int hciSocket;
   struct hci_dev_info hciDevInfo;
@@ -99,11 +98,10 @@ int main(int argc, const char* argv[])
   setbuf(stdout, NULL);
   setbuf(stderr, NULL);
 
-  hciDeviceIdOverride = getenv("NODEBS_HCI_DEVICE_ID");
-  if (hciDeviceIdOverride != NULL) {
-    hciDeviceId = atoi(hciDeviceIdOverride);
-  } else {
-    // if no env variable given, use the first available device
+  if (argc > 1)
+    hciDeviceId = atoi(argv[1]);
+  if (!hciDeviceId) {
+    // Use the first available device
     hciDeviceId = hci_get_route(NULL);
   }
 

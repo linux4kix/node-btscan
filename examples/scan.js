@@ -1,4 +1,5 @@
-var btscan = require('../index');
+var BtScan = require('../');
+var btscan = new BtScan();
 
 btscan.on('stateChange', function(state) {
   if (state === 'poweredOn') {
