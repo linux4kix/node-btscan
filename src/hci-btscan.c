@@ -86,7 +86,7 @@ int main(int argc, const char* argv[])
   memset(&hciDevInfo, 0x00, sizeof(hciDevInfo));
 
   // setup signal handlers
-  signal(SIGINT, signalHandler);
+//  signal(SIGINT, signalHandler);
   signal(SIGKILL, signalHandler);
   signal(SIGUSR1, signalHandler);
   signal(SIGUSR2, signalHandler);
@@ -142,7 +142,7 @@ int main(int argc, const char* argv[])
     exit(1);
   }
 
-  while(lastSignal > 9) {
+  while(1) {
     FD_ZERO(&rfds);
     FD_SET(hciSocket, &rfds);
 
