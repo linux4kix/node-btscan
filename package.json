@@ -1,5 +1,5 @@
 {
-  "name" : "node-btscan",
+  "name" : "btscan",
   "version" : "0.0.2",
   "description" : "A node.js Bluetooth Scanner.",
   "author" : "Jon Nettleton <jon.nettleton@gmail.com>",
